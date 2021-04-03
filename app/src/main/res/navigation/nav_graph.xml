@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/WelcomeFragment">
+    <fragment
+        android:id="@+id/WelcomeFragment"
+        android:name="com.robert.alphametrica.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/WelcomeToLogin"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/welcomeToSignUp"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.robert.alphametrica.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/LoginToWelcome"
+            app:destination="@id/WelcomeFragment" />
+        <action
+            android:id="@+id/LoginToSignUp"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/LoginToLoggedIn"
+            app:destination="@id/loggedIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.robert.alphametrica.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/SignUpToLogin"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/SignUpToWelcome"
+            app:destination="@id/WelcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loggedIn"
+        android:name="com.robert.alphametrica.LoggedIn"
+        android:label="fragment_logged_in"
+        tools:layout="@layout/fragment_logged_in" />
+</navigation>
